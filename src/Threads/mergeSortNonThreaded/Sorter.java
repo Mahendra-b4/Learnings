@@ -1,0 +1,61 @@
+package Threads.mergeSortNonThreaded;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+
+public class Sorter implements Callable<List<Integer>> {
+
+    private List<Integer> arraytosort;
+
+    public Sorter(List<Integer> cur){
+        arraytosort = cur;
+    }
+
+    @Override
+    public List<Integer> call() throws Exception {
+        if(arraytosort.size()<=1) return arraytosort;
+
+        int mid = arraytosort.size()/2;
+
+        List<Integer> leftoSort = new ArrayList<>();
+        List<Integer> rightoSort = new ArrayList<>();
+
+        for(int i=0 ; i<mid ; ++i){
+            leftoSort.add(arraytosort.get(i));
+        }
+        for(int i=mid ; i<arraytosort.size() ; ++i){
+            rightoSort.add(arraytosort.get(i));
+        }
+
+        Sorter leftie = new Sorter(leftoSort);
+        Sorter rightie = new Sorter(rightoSort);
+
+        List<Integer> leftSorted = leftie.call();
+        List<Integer> rightSorted = rightie.call();
+//        System.out.println("left = "+leftSorted);
+//        System.out.println("right = "+rightSorted);
+        List<Integer> completeSorted = new ArrayList<>();
+        int i=0,j=0;
+        while(i<leftSorted.size() && j<rightSorted.size()){
+            if(leftSorted.get(i) < rightSorted.get(j)) {
+                completeSorted.add(leftSorted.get(i));
+                ++i;
+            }
+            else{
+                completeSorted.add(rightSorted.get(j));
+                ++j;
+            }
+        }
+        while(i<leftSorted.size()){
+            completeSorted.add(leftSorted.get(i));
+            ++i;
+        }
+        while (j<rightSorted.size()){
+            completeSorted.add(rightSorted.get(j));
+            ++j;
+        }
+//        System.out.println("c = "+completeSorted);
+        return completeSorted;
+    }
+}
