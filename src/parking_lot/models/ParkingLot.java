@@ -12,6 +12,14 @@ public class ParkingLot extends BaseClass{
     private ParkingLotAllotmentStrategy parkingLotAllotmentStrategy;
     private BillingStrategy billingStrategy;
 
+    public ParkingLot(List<ParkingFloor> floors, List<Gate> gates, ParkingLotStatus parkingLotStatus, ParkingLotAllotmentStrategy parkingLotAllotmentStrategy, BillingStrategy billingStrategy) {
+        this.floors = floors;
+        this.gates = gates;
+        this.parkingLotStatus = parkingLotStatus;
+        this.parkingLotAllotmentStrategy = parkingLotAllotmentStrategy;
+        this.billingStrategy = billingStrategy;
+    }
+
     public List<ParkingFloor> getFloors() {
         return floors;
     }

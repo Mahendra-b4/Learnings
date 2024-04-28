@@ -18,6 +18,10 @@ public class IssueTicketRequest {
         this.parkingLotId = parkingLotId;
     }
 
+    public IssueTicketRequest() {
+
+    }
+
     public VehicleType getVehicleType() {
         return vehicleType;
     }

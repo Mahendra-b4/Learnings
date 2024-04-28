@@ -6,6 +6,11 @@ public class ParkingFloor extends BaseClass{
     private int floorNumber;
     private List<ParkingSlot> parkingSlot;
 
+    public ParkingFloor(int floorNumber, List<ParkingSlot> parkingSlot) {
+        this.floorNumber = floorNumber;
+        this.parkingSlot = parkingSlot;
+    }
+
     public int getFloorNumber() {
         return floorNumber;
     }

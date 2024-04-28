@@ -5,7 +5,14 @@ public class ParkingSlot extends BaseClass{
     private VehicleType vehicleType;
     private ParkingStatus parkingStatus;
     private int parkingSlotNumber;
-    private ParkingFloor floor;
+    private int floorId;
+
+    public ParkingSlot(VehicleType vehicleType, ParkingStatus parkingStatus, int parkingSlotNumber, int floorId) {
+        this.vehicleType = vehicleType;
+        this.parkingStatus = parkingStatus;
+        this.parkingSlotNumber = parkingSlotNumber;
+        this.floorId = floorId;
+    }
 
     public VehicleType getVehicleType() {
         return vehicleType;
@@ -31,11 +38,11 @@ public class ParkingSlot extends BaseClass{
         this.parkingSlotNumber = parkingSlotNumber;
     }
 
-    public ParkingFloor getFloor() {
-        return floor;
+    public int getFloor() {
+        return floorId;
     }
 
-    public void setFloor(ParkingFloor floor) {
-        this.floor = floor;
+    public void setFloor(int floorId) {
+        this.floorId = floorId;
     }
 }

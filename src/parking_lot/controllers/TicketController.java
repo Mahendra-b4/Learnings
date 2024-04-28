@@ -25,6 +25,8 @@ public class TicketController {
         Ticket ticket = null;
         try {
             ticket = ticketService.issueTicket(ticketRequest);
+            return new IssueTicketResponse(ticket, ResponseStatus.SUCCESS, TICKET_ISSUE_MESSAGE);
+
         } catch (GateNotFoundException e) {
             return new IssueTicketResponse(null, ResponseStatus.FAILURE, INVALID_GATE);
         } catch (NoParkingLotFoundException e) {
@@ -32,6 +34,6 @@ public class TicketController {
         } catch (ParkingLotFullException e) {
             return new IssueTicketResponse(null, ResponseStatus.FAILURE, PARKINGLOT_FULL);
         }
-        return new IssueTicketResponse(ticket, ResponseStatus.SUCCESS, TICKET_ISSUE_MESSAGE);
+//        return new IssueTicketResponse(ticket, ResponseStatus.SUCCESS, TICKET_ISSUE_MESSAGE);
     }
 }

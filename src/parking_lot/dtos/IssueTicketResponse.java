@@ -2,6 +2,8 @@ package parking_lot.dtos;
 
 import parking_lot.models.Ticket;
 
+import java.util.logging.Logger;
+
 public class IssueTicketResponse {
 
     private Ticket ticket;
@@ -12,6 +14,8 @@ public class IssueTicketResponse {
         this.ticket = ticket;
         this.responseStatus = responseStatus;
         this.message = message;
+
+        System.out.println(responseStatus.toString()+" : "+message);
     }
 
     public Ticket getTicket() {
