@@ -34,6 +34,7 @@ public class SendEmailConsumer {
 
         //create Authenticator object to pass in Session.getInstance argument
         Authenticator auth = new Authenticator() {
+            // gotgmotmggit
             //override the getPasswordAuthentication method
 //            public javax.mail.PasswordAuthentication getPasswordAuthentication() {
 //                return new PasswordAuthentication("mb@gmail.com", "ji".toCharArray());
