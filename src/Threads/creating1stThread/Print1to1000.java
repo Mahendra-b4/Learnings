@@ -3,7 +3,7 @@ package Threads.creating1stThread;
 public class Print1to1000 implements Runnable{
     private int p;
     public Print1to1000(int k){
-        p = k;
+        this.p = k;
     }
 
     @Override
