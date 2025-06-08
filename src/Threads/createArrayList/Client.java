@@ -17,6 +17,6 @@ public class Client{
         Future<List<Integer>> ansFut = es.submit(ac);
         List<Integer> ans = ansFut.get();
         System.out.println(ans);
-
+        es.shutdown();
     }
 }
