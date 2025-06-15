@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 //        We can't create an object f interface
-//        So we need to create class implement interface and create object of thet class
+//        So we need to create class implement interface and create object of that class
 
         // Way1 -> by new class
         DemoClass dm1 = new DemoClass();
@@ -18,17 +18,23 @@ public class Main {
             public void fun() {
                 System.out.println("by Anonimous method, directly creating object of interface");
             }
+
+//            @Override
+//            public void fun4() {
+//                System.out.println("by Anonimous method, directly creating object of interface : FUN4");
+//            }
         };
 
         // Way3 -> lambda
         demointerface dm3 = () -> {
             // Provide implementation of abstract method
-            // It directly refers to abstract method as we've only 1 abstact method in functional interface
+            // It directly refers to abstract method as we've only 1 abstract method in functional interface
             System.out.println("Lambda method of implemntation of interface");
         };
 
         dm1.fun();
         dm2.fun();
+//        dm2.fun4();
         dm3.fun();
 
         // Anonimous way of implementation for Predicate Functional Interface
