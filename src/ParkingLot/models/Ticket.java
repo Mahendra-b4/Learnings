@@ -3,21 +3,39 @@ package ParkingLot.models;
 import java.time.LocalDateTime;
 
 public class Ticket {
-    private int ticketNumber;
+    private String ticketNumber;
     private Vehicle vehicle;
     private LocalDateTime entryTime;
     private ParkingSlot parkingSlot;
-    private Operator operator;
 
-    public Ticket(int ticketNumber, Vehicle vehicle, LocalDateTime entryDateTime, ParkingSlot parkingSlot, Operator operator) {
+    public Ticket(String ticketNumber, Vehicle vehicle, LocalDateTime entryDateTime, ParkingSlot parkingSlot) {
         this.ticketNumber = ticketNumber;
         this.vehicle = vehicle;
         this.entryTime = LocalDateTime.now();
         this.parkingSlot = parkingSlot;
-        this.operator = operator;
     }
 
-    public int getTicketNumber() {
+    public Ticket() {
+
+    }
+
+    public void setTicketNumber(String ticketNumber) {
+        this.ticketNumber = ticketNumber;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public void setEntryTime(LocalDateTime entryTime) {
+        this.entryTime = entryTime;
+    }
+
+    public void setParkingSlot(ParkingSlot parkingSlot) {
+        this.parkingSlot = parkingSlot;
+    }
+
+    public String getTicketNumber() {
         return ticketNumber;
     }
 
@@ -33,7 +51,13 @@ public class Ticket {
         return parkingSlot;
     }
 
-    public Operator getOperator() {
-        return operator;
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "ticketNumber='" + ticketNumber + '\'' +
+                ", vehicle=" + vehicle.toString() +
+                ", entryTime=" + entryTime +
+                ", parkingSlot=" + parkingSlot.toString() +
+                '}';
     }
 }

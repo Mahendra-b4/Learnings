@@ -26,4 +26,12 @@ public class ParkingLot {
         }
         return parkingLot;
     }
+
+    public void setParkingLotStatus(ParkingLotStatus parkingLotStatus) {
+        this.parkingLotStatus = parkingLotStatus;
+    }
+
+    public ParkingLotStatus getParkingLotStatus() {
+        return parkingLotStatus;
+    }
 }

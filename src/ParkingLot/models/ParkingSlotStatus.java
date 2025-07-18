@@ -1,5 +1,10 @@
 package ParkingLot.models;
 
 public enum ParkingSlotStatus {
-    OCCUPIED, AVAILABLE, RESERVED
+    OCCUPIED, AVAILABLE, RESERVED;
+
+    @Override
+    public String toString() {
+        return "ParkingSlotStatus{}";
+    }
 }
